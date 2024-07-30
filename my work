@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Guessing Game for Charles Severance - facae3a3</title>
+</head>
+<body>
+    <h1>Welcome to my guessing game</h1>
+    <p>Missing guess parameter</p>
+    <body>
+    <form method="post" action="">
+        <label for="guess">Enter your guess (1-100):</label>
+        <input type="text" id="guess" name="guess">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</body>
+</html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $guess = $_POST['guess'];
+
+    if (!is_numeric($guess)) {
+        if ($guess == "fred") {
+            echo "It's not a number.";
+        } else {
+            echo "Please enter a valid number.";
+        }
+    } else {
+        $guess = (int)$guess;
+        if ($guess < 75) {
+            echo "Too short.";
+        } elseif ($guess == 75) {
+            echo "Too low.";
+        } elseif ($guess == 76) {
+            echo "Congratulations, you are right!";
+        } elseif ($guess ==  77) {
+            echo "Too high.";
+        } elseif ($guess > 77) {
+            echo "Too high.";
+        }
+    }
+}
