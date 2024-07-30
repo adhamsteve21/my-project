@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!is_numeric($guess)) {
         if ($guess == "fred") {
-            echo "your guess is wrong It's not a number.";
+            echo "your guess is not a number.";
         } else {
             echo "Please enter a valid number.";
         }
