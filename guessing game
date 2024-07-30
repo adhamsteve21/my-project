@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guessing Game for Adham Medhat Elsaeed d04863ffacae3a3</title>
-  </head>
+<html>
+    <head>
+        <title>project by Adham Medhat Elsaied facae3a3</title>
+</head>
 <body>
-  <h1>Welcome to my guessing game</h1>
-  <p>
-    <?php
-      if ( !isset($_GET['guess']) ) 
-      { 
-        echo("Missing guess parameter");
-      } 
-      else if ( strlen($_GET['guess']) < 1 ) 
-      {
-        echo("Your guess is too short");
-      } 
-      else if ( !is_numeric($_GET['guess']) ) 
-      {
-        echo("Your guess is not a number");
-      } 
-      else if ( $_GET['guess'] < 28 ) 
-      {
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guessing Game for Adham Medhat Elsaeed d04863ffacae3a3</title>
-  </head>
-<body>
-  <h1>Welcome to my guessing game</h1>
-  <p>
-    <?php
-      if ( !isset($_GET['guess']) ) 
-      { 
-        echo("Missing guess parameter");
-      } 
-      else if ( strlen($_GET['guess']) < 1 ) 
-      {
-        echo("Your guess is too short");
-      } 
-      else if ( !is_numeric($_GET['guess']) ) 
-      {
-        echo("Your guess is not a number");
-      } 
-      else if ( $_GET['guess'] < 28 ) 
-      {
+    <h1>Welcome to my guessing game</h1>
+    <p>Missing guess parameter</p>
+    <body>
+    <form method="post" action="">
+        <label for="guess">Enter your guess (1-100):</label>
+        <input type="text" id="guess" name="guess">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</body>
+</html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $guess = $_POST['guess'];
+
+    if (!is_numeric($guess)) {
+        if ($guess == "fred") {
+            echo "It's not a number.";
+        } else {
+            echo "Please enter a valid number.";
+        }
+    } else {
+        $guess = (int)$guess;
+        if ($guess < 75) {
+            echo "your guess is Too short.";
+        } elseif ($guess == 75) {
+            echo "your guess is Too low.";
+        } elseif ($guess == 76) {
+            echo "Congratulations, you are right!";
+        } elseif ($guess ==  77) {
+            echo "your guess is Too high.";
+        } elseif ($guess > 77) {
+            echo "your guess is Too high.";
+        }
+    }
+}
